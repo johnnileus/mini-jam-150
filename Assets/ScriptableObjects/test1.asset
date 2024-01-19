@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 655056720533887548, guid: c178dd7d4746c4b4d93c34d4ec0951a4,
     type: 3}
-  projSpeed: 1000
-  projDirection: {x: 0, y: 0, z: -5}
-  attackDelay: 1.2
+  projSpeed: 100
+  projDirection: {x: -0.70710677, y: -0.50000006, z: -0.5}
+  attackDelay: 0.8
   shootType: 1

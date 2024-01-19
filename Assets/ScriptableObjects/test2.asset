@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727f43ce991d3b640905be826b61d29e, type: 3}
   m_Name: test2
   m_EditorClassIdentifier: 
-  projectile: {fileID: 655056720533887548, guid: c178dd7d4746c4b4d93c34d4ec0951a4,
+  projectile: {fileID: 655056720533887548, guid: 903573042c03e3e4abf8fbd396e0abf7,
     type: 3}
-  projSpeed: 500
-  projDirection: {x: 0, y: 0, z: -5}
+  projSpeed: 40
+  projDirection: {x: 0, y: 0, z: -1}
   attackDelay: 1.2
   shootType: 1
