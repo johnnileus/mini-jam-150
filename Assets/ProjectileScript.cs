@@ -9,6 +9,11 @@ public class ProjectileScript : MonoBehaviour{
     
     
     private Rigidbody rb;
+
+    public void setTimeToLive(float amt){
+        timeToLive = amt;
+    }
+    
     // Start is called before the first frame update
     void Start(){
         rb = gameObject.GetComponent<Rigidbody>();
