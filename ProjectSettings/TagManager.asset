@@ -8,6 +8,7 @@ TagManager:
   - StaminaSlider
   - AmmoLabel
   - PlayerObject
+  - ProjModel
   layers:
   - Default
   - TransparentFX

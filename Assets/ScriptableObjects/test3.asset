@@ -10,16 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 727f43ce991d3b640905be826b61d29e, type: 3}
-  m_Name: test2
+  m_Name: test3
   m_EditorClassIdentifier: 
-  projectile: {fileID: 655056720533887548, guid: 903573042c03e3e4abf8fbd396e0abf7,
+  projectile: {fileID: 655056720533887548, guid: a10539dbdf406ec46a7d5b2273f2301b,
     type: 3}
-  projSpeed: 400
-  projDirection: {x: 0, y: 0, z: -1}
+  projSpeed: 600
+  projDirection: {x: 1, y: 0, z: 0}
   projLifetime: 8
-  delayType: 0
-  uniformInterval: 2
-  delayList: []
-  shootType: 0
-  randomMultipleAmt: 1
-  spawnIndexes: 05000000060000000800000009000000
+  delayType: 1
+  uniformInterval: 0
+  uniformDelay: 1
+  delayList:
+  - 1.5
+  - 3.5
+  - 5.5
+  - 7.5
+  - 9.5
+  - 11.5
+  shootType: 3
+  randomMultipleAmt: 3
+  spawnIndexes: 0000000001000000020000000300000004000000

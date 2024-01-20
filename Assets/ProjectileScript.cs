@@ -6,9 +6,11 @@ public class ProjectileScript : MonoBehaviour{
 
     [SerializeField] private float timeToLive;
     private float timeSpawned;
-    
+
+    private Vector3 lastPos;
     
     private Rigidbody rb;
+    private Transform projModel;
 
     public void setTimeToLive(float amt){
         timeToLive = amt;
@@ -18,6 +20,8 @@ public class ProjectileScript : MonoBehaviour{
     void Start(){
         rb = gameObject.GetComponent<Rigidbody>();
         timeSpawned = Time.time;
+        lastPos = transform.position;
+        projModel = transform.GetChild(0);
     }
 
     // Update is called once per frame
@@ -26,5 +30,8 @@ public class ProjectileScript : MonoBehaviour{
         if (timeSpawned + timeToLive < Time.time) {
             Destroy(gameObject);
         }
+        
+        projModel.LookAt(transform.position*2 - lastPos);
+        lastPos = transform.position;
     }
 }
