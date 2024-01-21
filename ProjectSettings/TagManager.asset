@@ -9,6 +9,7 @@ TagManager:
   - AmmoLabel
   - PlayerObject
   - ProjModel
+  - EndOfLevel
   layers:
   - Default
   - TransparentFX
