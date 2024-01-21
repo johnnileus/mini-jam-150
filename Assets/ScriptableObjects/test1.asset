@@ -15,10 +15,10 @@ MonoBehaviour:
   projectile: {fileID: 655056720533887548, guid: 1bba15ca739cafd4fb333d863e118f99,
     type: 3}
   projSpeed: 300
-  projDirection: {x: 0, y: 0, z: -1}
+  projDirection: {x: -1, y: 0, z: 0}
   projLifetime: 8
   delayType: 1
-  uniformInterval: 0
+  uniformInterval: 5
   delayList:
   - 1
   - 1.5
@@ -32,6 +32,6 @@ MonoBehaviour:
   - 9.5
   - 11
   - 11.5
-  shootType: 1
+  shootType: 3
   randomMultipleAmt: 3
   spawnIndexes: 0500000006000000070000000800000009000000

@@ -15,7 +15,7 @@ MonoBehaviour:
   projectile: {fileID: 655056720533887548, guid: 903573042c03e3e4abf8fbd396e0abf7,
     type: 3}
   projSpeed: 400
-  projDirection: {x: 0, y: 0, z: -1}
+  projDirection: {x: -1, y: 0, z: 0}
   projLifetime: 8
   delayType: 0
   uniformInterval: 2
