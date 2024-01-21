@@ -21,7 +21,21 @@ public class LevelManager : MonoBehaviour
     private float timeLevelLoaded;
     private bool levelLoaded;
 
+    private bool playerDead;
+    
+    public void KillPlayer(){
+        levelFailMenu.SetActive(true);
+        playerDead = true;
+    }
 
+    public bool GetPlayerState(){
+        return playerDead;
+    }
+
+    public float getTimeLevelLoaded(){
+        return timeLevelLoaded;
+    }
+    
     public void LoadNextLevel(){
         print($"a {currentLevel} {levelAmt}");
         
@@ -38,7 +52,8 @@ public class LevelManager : MonoBehaviour
             levelFailMenu.SetActive(false);
             levelLoaded = true;
         }
-        
+
+        playerDead = false;
     }
 
     public void ReloadLevel(){
@@ -46,6 +61,7 @@ public class LevelManager : MonoBehaviour
         timeLevelLoaded = Time.time;
         levelFailMenu.SetActive(false);
         levelLoaded = true;
+        playerDead = false;
     }
     
     private void Awake(){
@@ -64,6 +80,7 @@ public class LevelManager : MonoBehaviour
         currentLevel = -1;
         levelLoaded = false;
         levelAmt = levelLengths.Length - 1;
+        playerDead = false;
     }
 
     // Update is called once per frame

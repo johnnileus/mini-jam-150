@@ -22,7 +22,11 @@ public class ProjectileManager : MonoBehaviour{
         curShootIndex = new int[projectiles.Length];
         lastShot = new int[projectiles.Length];
         lastAttacked = new float[projectiles.Length];
-        initTime = Time.time;
+        initTime = LevelManager.instance.getTimeLevelLoaded();
+        
+        for (int i = 0; i < lastAttacked.Length; i++) {
+            lastAttacked[i] = initTime + projectiles[i].uniformDelay;
+        }
     }
 
     private void SpawnProjectile(ProjectileSO p, Vector3 pos){
@@ -36,6 +40,10 @@ public class ProjectileManager : MonoBehaviour{
     void Update(){
         
         //grid based projectiles
+        if (LevelManager.instance.GetPlayerState()) {
+            Destroy(gameObject);
+        }
+        
         for (int i = 0; i < projectiles.Length; i++) {
             ProjectileSO p = projectiles[i];
 
@@ -45,9 +53,9 @@ public class ProjectileManager : MonoBehaviour{
             
             switch (p.delayType) {
                 case ProjectileSO.DelayType.Uniform: {
-                    if (lastAttacked[i] + p.uniformInterval < Time.time) {
+                    if (lastAttacked[i] + p.uniformInterval< Time.time) {
                         ready = true;
-                    }
+                        lastAttacked[i] = Time.time + p.uniformInterval; }
 
                     break;
                 }case ProjectileSO.DelayType.List: {

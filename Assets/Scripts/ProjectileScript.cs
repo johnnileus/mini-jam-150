@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,11 +28,21 @@ public class ProjectileScript : MonoBehaviour{
     // Update is called once per frame
     void Update()
     {
+        if (LevelManager.instance.GetPlayerState()) {
+            Destroy(gameObject);
+        }
+        
         if (timeSpawned + timeToLive < Time.time) {
             Destroy(gameObject);
         }
         
         projModel.LookAt(transform.position*2 - lastPos);
         lastPos = transform.position;
+    }
+
+    private void OnTriggerEnter(Collider other){
+        if (other.CompareTag("Player")) {
+            other.GetComponent<PlayerHealth>().DamagePlayer();
+        }
     }
 }

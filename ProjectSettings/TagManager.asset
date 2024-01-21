@@ -7,9 +7,12 @@ TagManager:
   - Enemy
   - StaminaSlider
   - AmmoLabel
-  - PlayerObject
   - ProjModel
-  - EndOfLevel
+  - ReloadLevel
+  - NextLevel
+  - SpawnPoint
+  - PlayerModel
+  - LevelManager
   layers:
   - Default
   - TransparentFX

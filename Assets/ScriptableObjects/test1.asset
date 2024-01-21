@@ -19,6 +19,7 @@ MonoBehaviour:
   projLifetime: 8
   delayType: 1
   uniformInterval: 5
+  uniformDelay: 4
   delayList:
   - 1
   - 1.5

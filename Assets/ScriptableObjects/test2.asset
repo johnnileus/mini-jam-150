@@ -18,7 +18,8 @@ MonoBehaviour:
   projDirection: {x: -1, y: 0, z: 0}
   projLifetime: 8
   delayType: 0
-  uniformInterval: 2
+  uniformInterval: 0.5
+  uniformDelay: 1
   delayList: []
   shootType: 0
   randomMultipleAmt: 1

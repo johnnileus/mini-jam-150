@@ -19,7 +19,7 @@ public class ProjectileSO : ScriptableObject
     [Space(16)]
     public DelayType delayType;
     public float uniformInterval;
-    //public float uniformDelay;
+    public float uniformDelay;
 
     public float[] delayList;
     
