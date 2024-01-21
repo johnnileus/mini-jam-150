@@ -9,12 +9,14 @@ public class PlayerCombat : MonoBehaviour{
 
     [SerializeField] private int maxHealth;
     [SerializeField] private int fagHealAmt;
+    [SerializeField] private int attackHealthCost;
     private int currentHealth;
 
     private float timeLitFag;
-    private float timeToUnlight;
-    private bool fagLit;
-    
+    [SerializeField]private float timeToUnlight;
+    public bool fagLit;
+    public bool canMove = true;
+
     [SerializeField] private Slider hpSlider;
 
     public void DamagePlayer(int dmg){
@@ -28,13 +30,18 @@ public class PlayerCombat : MonoBehaviour{
     }
 
 
-    
     private void updateHealthUI (){
         hpSlider.value = (float)currentHealth / maxHealth;
         print($"{currentHealth} {maxHealth} {currentHealth/maxHealth}");
     }
     
     private void AttackBoss(){
+        if(currentHealth - attackHealthCost <= 0)
+        {
+            print(currentHealth - attackHealthCost);
+            return;
+        }
+        DamagePlayer(attackHealthCost);
         GameObject.FindWithTag("Enemy").GetComponent<BossController>().AttackBoss();
     }
     
@@ -47,6 +54,11 @@ public class PlayerCombat : MonoBehaviour{
         timeLitFag = Time.time;
         fagLit = true;
         currentHealth += fagHealAmt;
+
+        if (currentHealth >= maxHealth) currentHealth = maxHealth;
+
+        updateHealthUI();
+
         //animate lighting the fag
         //have lit fag
     }
@@ -61,22 +73,26 @@ public class PlayerCombat : MonoBehaviour{
     void Start(){
         currentHealth = maxHealth;
         timeLitFag = Time.time;
+        updateHealthUI();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E)) {
-            AttackBoss();
+            if(canMove)
+                AttackBoss();
         }
 
         if (fagLit && timeLitFag + timeToUnlight < Time.time) {
             UnlightFag();
+            canMove = true;
         }
         
-        if (!fagLit && Input.GetKeyDown(KeyCode.Q)) {
+        if (!fagLit && Input.GetKeyDown(KeyCode.R)) {
             print("ciggy lit");
             LightCiggy();
+            canMove = false;
         }
         
     }

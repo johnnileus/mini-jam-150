@@ -17,7 +17,7 @@ MonoBehaviour:
   projSpeed: 300
   projDirection: {x: -1, y: 0, z: 0}
   projLifetime: 8
-  delayType: 0
+  delayType: 1
   uniformInterval: 5
   uniformDelay: 4
   delayList:
@@ -35,4 +35,4 @@ MonoBehaviour:
   - 11.5
   shootType: 3
   randomMultipleAmt: 3
-  spawnIndexes: 0500000006000000070000000800000009000000
+  spawnIndexes: 0000000001000000020000000300000004000000
