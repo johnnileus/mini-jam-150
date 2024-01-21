@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance { get; private set; }
 
     [SerializeField] private GameObject levelFailMenu;
+    [SerializeField] private GameObject nextLevelMenu;
     
     private int currentLevel;
 
@@ -21,17 +22,24 @@ public class LevelManager : MonoBehaviour
     private float timeLevelLoaded;
     private bool levelLoaded;
 
-    private bool playerDead;
+    private bool playerUnactive;
     
     public void KillPlayer(){
         levelFailMenu.SetActive(true);
-        playerDead = true;
+        playerUnactive = true;
     }
 
     public bool GetPlayerState(){
-        return playerDead;
+        return playerUnactive;
+    }
+    public void SetPlayerState(bool state){
+        playerUnactive = state;
     }
 
+    public void SetNextLevelMenuActive(bool state){
+        nextLevelMenu.SetActive(state);
+    }
+    
     public float getTimeLevelLoaded(){
         return timeLevelLoaded;
     }
@@ -53,7 +61,7 @@ public class LevelManager : MonoBehaviour
             levelLoaded = true;
         }
 
-        playerDead = false;
+        playerUnactive = false;
     }
 
     public void ReloadLevel(){
@@ -61,7 +69,7 @@ public class LevelManager : MonoBehaviour
         timeLevelLoaded = Time.time;
         levelFailMenu.SetActive(false);
         levelLoaded = true;
-        playerDead = false;
+        playerUnactive = false;
     }
     
     private void Awake(){
@@ -80,7 +88,7 @@ public class LevelManager : MonoBehaviour
         currentLevel = -1;
         levelLoaded = false;
         levelAmt = levelLengths.Length - 1;
-        playerDead = false;
+        playerUnactive = false;
     }
 
     // Update is called once per frame

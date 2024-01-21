@@ -1557,6 +1557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelFailMenu: {fileID: 810276818}
+  nextLevelMenu: {fileID: 465320792}
   levelLengths:
   - 15
   - 5

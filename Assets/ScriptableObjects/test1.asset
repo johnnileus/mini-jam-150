@@ -17,7 +17,7 @@ MonoBehaviour:
   projSpeed: 300
   projDirection: {x: -1, y: 0, z: 0}
   projLifetime: 8
-  delayType: 1
+  delayType: 0
   uniformInterval: 5
   uniformDelay: 4
   delayList:

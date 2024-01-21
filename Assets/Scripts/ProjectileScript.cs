@@ -42,7 +42,7 @@ public class ProjectileScript : MonoBehaviour{
 
     private void OnTriggerEnter(Collider other){
         if (other.CompareTag("Player")) {
-            other.GetComponent<PlayerHealth>().DamagePlayer();
+            other.GetComponent<PlayerCombat>().DamagePlayer(25);
         }
     }
 }
