@@ -99,7 +99,7 @@ public class LevelManager : MonoBehaviour
             LoadNextLevel();
         }
         
-        if (levelLoaded && timeLevelLoaded + levelLengths[currentLevel] < Time.time) {
+        if (!playerUnactive && levelLoaded && timeLevelLoaded + levelLengths[currentLevel] < Time.time) {
             levelFailMenu.SetActive(true);
         }
         
